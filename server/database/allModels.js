@@ -2,8 +2,8 @@ import {FoodModel} from "./food"
 import {ImageModel} from "./image"
 import {MenuModel} from "./menu"
 import {OrderModel} from "./order"
-import {RestaurentModel} from "./restaurent"
-import {ReviewModel} from "./review"
+import {RestaurantModel} from "./restaurant"
+import {ReviewModal} from "./review"
 import {UserModel} from "./user"
 
 export{
@@ -11,7 +11,7 @@ export{
     ImageModel,
     MenuModel,
     OrderModel,
-    RestaurentModel,
-    ReviewModel,
+    RestaurantModel,
+    ReviewModal,
     UserModel
 }
