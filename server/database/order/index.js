@@ -8,15 +8,15 @@ const OrderSchema = new mongoose.Schema(
         food: [
           {
             details: { type: mongoose.Types.ObjectId, required: true },
-            quantity: { type: number, required: true },
+            quantity: { type: Number, required: true },
           },
         ],
         paymentMode: { type: String, required: true },
         status: { type: String, default: "Placed" },
         paymentDetails: {
-          itemTotal: { type: number, required: true },
-          promo: { type: number, required: true },
-          tax: { type: number, required: true },
+          itemTotal: { type: Number, required: true },
+          promo: { type: Number, required: true },
+          tax: { type: Number, required: true },
           razorpay_payment_id: { type: String, required: true },
         },
       },
