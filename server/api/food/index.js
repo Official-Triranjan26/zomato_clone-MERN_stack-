@@ -3,6 +3,15 @@ import {FoodModel} from "../../database/allModels"
 
 const Router=express.Router();
 
+/**
+ * Route     /:_id
+ * Des       Create New Food Item
+ * Params    none
+ * Access    Public
+ * Method    POST
+ *  Homework//
+ */
+// -----------------------------
 /* 
 Route:  /:_id
 Des:    get food based on id
