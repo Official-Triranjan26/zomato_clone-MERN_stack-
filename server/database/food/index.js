@@ -14,7 +14,7 @@ const FoodSchema=new mongoose.Schema({
             ref:"foods",
         },
     ],
-    restaurents:{type:mongoose.Types.ObjectId,ref:"restaurents"}
+    restaurants:{type:mongoose.Types.ObjectId,ref:"restaurants"}
 },
 {
     timestamps:true,
