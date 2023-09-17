@@ -1,10 +1,11 @@
 import express from "express";
 import {RestaurantModel} from "../../database/allModels"
+import { ValidateRestaurantCity, ValidateSearchString } from "../../validation/restaurant.validation";
 
 const Router=express.Router();
 /*
 Route:  /
-Des:    get all the restaurents on basis of a city
+Des:    get all the restaurants on basis of a city
 params: none
 access: public
 method: get
@@ -12,7 +13,8 @@ method: get
 
 Router.get("/",async(req,res)=>{
     try{
-        //http://localhost:4000/restaurent/?city=kolkata
+        await ValidateRestaurantCity(req.query);
+        //http://localhost:4000/restaurant/?city=kolkata
         const {city}=req.query;
         const restaurants = await RestaurantModel.find({city})
 
@@ -62,11 +64,12 @@ method: get
 
 Router.get("/search/:searchString",async(req,res)=>{
     try{
+        await ValidateSearchString(req.params);
         const {searchString}=req.params;
-        const restaurants=RestaurantModel.find({
+        const restaurants= await RestaurantModel.find({
             name:{$regex:searchString ,$options:"i"}
         });
-        if(!restaurants){
+        if(restaurants.length==0){
             return res.status(400).json({error:`No restaurant matched with ${searchString}`})
         }
 
