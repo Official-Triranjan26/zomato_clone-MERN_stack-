@@ -1,0 +1,20 @@
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  top: 50%;
+  background: white;
+  border-radius: 100%;
+  padding: 5px !important;
+  width: 30px;
+  height: 30px;
+}
+
+.mySwiper .swiper-button-prev::after,
+.mySwiper .swiper-button-next::after {
+  font-size: 15px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.mySwiper .swiper-button-prev {
+}

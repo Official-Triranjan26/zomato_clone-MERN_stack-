@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { RiShoppingBag3Line } from "react-icons/ri";
-import { IoFastFoodOutline, IoNutritionOutline } from "react-icons/io5";
+import { IoFastFoodOutline} from "react-icons/io5";
+// IoNutritionOutline
 import { BiDrink } from "react-icons/bi";
 import classnames from "classnames";
 
