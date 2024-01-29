@@ -3,12 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from 'swiper/modules';
-import {firstOrder_categories} from '../CarousalData';
+import {topBrand_categories} from '../CarousalData';
 
 import DeliveryCategoryCard from "./DeliveryCategoryCard";
 
-const DeliveryCarousel = () => {
-  
+const TopBrandsCarousal = ()=>{
 
   const slideConfig = {
     slidesPerView: 1,
@@ -37,18 +36,17 @@ const DeliveryCarousel = () => {
 
   return (
     <>
-      <h1 className="text-xl mt-4 md:mt-8 md:text-3xl md:font-semibold mb-8">
-        Inspiration for yout first order
+      <h1 className="text-xl mt-8 md:mt-8 md:text-3xl md:font-semibold mb-8 lg:mt-10">
+        Top brands for you
       </h1>
-      <div className="lg:hidden grid grid-cols-3 md:grid-cols-4 gap-3 justify-center" >
-        {firstOrder_categories.map((food, index) => (
+      <div className="lg:hidden grid grid-cols-3 md:grid-cols-4 gap-3 justify-center">
+        {topBrand_categories.map((food, index) => (
           <DeliveryCategoryCard key={index} {...food} />
         ))}
       </div>
-      <div className="hidden lg:block">
+      <div id="no" className="hidden lg:block" >
         <Swiper {...slideConfig}>
-          {firstOrder_categories
-          .map((food, index) => (
+          {topBrand_categories.map((food, index) => (
             <SwiperSlide key={index}>
               <DeliveryCategoryCard {...food} />
             </SwiperSlide>
@@ -57,6 +55,6 @@ const DeliveryCarousel = () => {
       </div>
     </>
   );
-};
+}
 
-export default DeliveryCarousel;
+export default TopBrandsCarousal;
