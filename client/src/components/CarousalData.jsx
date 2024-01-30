@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 
 export const topBrand_categories = [
     {
@@ -95,5 +95,81 @@ export const topBrand_categories = [
       title: "Momos",
     },
   ];
+  export const dining_carousalData = [
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/019acf0c53e2ebf0e8658e471a20a2ab_1665210805.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/4872d7301e80d72fd18c4e1e43bf8789_1660738717.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/84317f74208f036be1936e32dc627d88_1660823494.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/51979569f85f4579e15336825f446188_1660738438.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/d9eea3ef785def3a1d4e19c89bf19b11_1660816040.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/collections/ef4da4077aae068ea1e4410eefb5aec5_1660735784.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+  ];
+  export const nightLife_carousalData = [
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/0/20951660/b65fb24ed749716748606b5d94834009_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/1/18431481/ae29eaca6efbc3ed8d36629a6e3b0ee8_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/3/20730103/30f76cf85b0917acb6489b79ada328a0_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/9/18634729/c44e9ecdac163587c755ba16088dfe09_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/4/20872874/b4ad892b5f631adb856ea556e4731bdf_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+    {
+      image:
+        "https://b.zmtcdn.com/data/pictures/1/19963631/2c6b9a87511f7644effe0ee4658f287c_featured_v2.jpg",
+      title: "Eid-e-Milad Specials",
+      places: "9 Places",
+    },
+  ]
 
 // export default categories

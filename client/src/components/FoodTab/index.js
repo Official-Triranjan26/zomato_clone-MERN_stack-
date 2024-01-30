@@ -23,11 +23,6 @@ const MobileTabs = () => {
       icon: <BiDrink />,
       name: "Night Life",
     },
-    {
-      id: "nutri",
-      icon: <RiShoppingBag3Line />,
-      name: "Nutrition",
-    },
   ]);
 
   const { type } = useParams();
@@ -36,7 +31,7 @@ const MobileTabs = () => {
     <>
       <div className="lg:hidden flex bg-white shadow-lg fixed bottom-0 z-10 w-full items-center justify-between md:justify-evenly text-gray-500 border">
         {allTypes.map((item) => (
-          <Link key={item.id} to={`/${item.id}`} className="w-1/4">
+          <Link key={item.id} to={`/${item.id}`} className="w-1/3">
             <div
               className={
                 type === item.id
@@ -91,15 +86,6 @@ const LargeTabs = () => {
       activeColor: "purple",
       name: "Night life",
     },
-    {
-      id: `nutri`,
-      imageDefault:
-        "https://b.zmtcdn.com/data/o2_assets/54cad8274d3c3ec7129e0808a13b27c31616582882.png",
-      imageActive:
-        "https://b.zmtcdn.com/data/o2_assets/0f6dcb1aef93fa03ea3f91f37918f3bc1616649503.png",
-      activeColor: "yellow",
-      name: "Nutrition",
-    },
   ]);
 
   const { type } = useParams();
@@ -108,7 +94,7 @@ const LargeTabs = () => {
     <>
       <div className="hidden lg:flex gap-14 container px-20 my-8 mx-auto">
         {allTypes.map((item) => (
-          <Link key={item.id} to={`/${item.id}`} className="w-36">
+          <Link key={item.id} to={`/${item.id}`} className="w-40">
             <div
               className={classnames(
                 "flex items-center gap-3 pb-2 transition duration-700 ease-in-out",
