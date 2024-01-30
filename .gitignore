@@ -4,3 +4,5 @@ server/.env
 client/node_modules
 client/package-lock.json
 .vscode
+client/src/components/NightLife/ButtonBar.jsx
+client/src/components/NightLife/TopText.jsx

@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { dining_carousalData } from "../CarousalData";
+import { nightLife_carousalData } from "../CarousalData";
 
 // components
 import PictureCarouselCard from "../PictureCarouselCard";
-const DiningCarousel = () => {
+const NightLifeCarousel = () => {
 
   const slideConfig = {
     slidesPerView: 1,
@@ -37,7 +37,7 @@ const DiningCarousel = () => {
   return (
     <div className="w-full">
       <Swiper {...slideConfig}>
-        {dining_carousalData.map((item, index) => (
+        {nightLife_carousalData.map((item, index) => (
           <SwiperSlide key={index}>
             <PictureCarouselCard {...item} />
           </SwiperSlide>
@@ -47,4 +47,4 @@ const DiningCarousel = () => {
   );
 };
 
-export default DiningCarousel;
+export default NightLifeCarousel;
