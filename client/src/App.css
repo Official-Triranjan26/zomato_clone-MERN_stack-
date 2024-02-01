@@ -46,3 +46,7 @@
 /* #no {
   background: linear-gradient(to right, rgb(248, 248, 248) 0%, rgb(255, 255, 255) 10%, rgb(248, 248, 248) 40%, rgb(248, 248, 248) 100%) no-repeat rgb(248, 248, 248)
 } */
+
+#ReactSimpleImageViewer {
+  z-index: 100;
+}

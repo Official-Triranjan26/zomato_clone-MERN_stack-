@@ -35,7 +35,7 @@ const TempLayout = (Component)=>
                         <RiShareForwardLine /> Share
                     </InfoButton>
                 </div>
-                <div className="my-10">
+                <div className="my-10 sticky top-0 bg-white  z-10">
                     <Tabs />
                 </div>
                 <Component {...props}/>
