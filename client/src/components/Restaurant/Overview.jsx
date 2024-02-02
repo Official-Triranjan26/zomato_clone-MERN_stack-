@@ -38,7 +38,20 @@ const Overview = () => {
     "https://b.zmtcdn.com/data/menus/931/931/8d6623791860b054953b6c2c14d61bcb.jpg",
     "https://b.zmtcdn.com/data/menus/931/931/6d462a04051c0eabb0067149aa84cc64.jpg",
   ]);
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([
+    {
+      rating: 3.5,
+      isRestaurantReview: false,
+      createdAt: "Fri Oct 14 2022 20:20:34 GMT+0530 (India Standard Time)",
+      reviewText: "Very bad experience.",
+    },
+    {
+      rating: 4.5,
+      isRestaurantReview: false,
+      createdAt: "Fri Oct 14 2022 20:19:34 GMT+0530 (India Standard Time)",
+      reviewText: "Very good experience.",
+    },
+  ]);
   const { id } = useParams;
 
   const slideConfig = {
@@ -76,7 +89,7 @@ const Overview = () => {
         <h2 className="font-semibold text-lg md:text-xl my-4">
           About this place
         </h2>
-        <div className="hidden md:flex w-full justify-start gap-2 pb-4 pt-2">
+        <div className="hidden md:flex flex-wrap w-full justify-start gap-2 pb-4 pt-2">
           {AboutData.map((data,index)=>(
             <AboutCard img={data.img} topText={data.topText} bottomText={data.bottomText} key={index}/>
           ))}
@@ -109,6 +122,8 @@ const Overview = () => {
             </span>
           ))}
         </div>
+        <h4 className="text-lg font-medium my-4">Popular Dishes</h4>
+        <h6 className="text-md mb-4">Jade Soup, Shanghai Octopus, Julu Pitha, Bamboo Chicken Biryani, Tilhou Kheer, Shanghai Squid</h6>
 
         <div className="my-4">
           <h2 className="text-lg font-medium">Average Cost</h2>
@@ -170,7 +185,7 @@ const Overview = () => {
             <MapView
               title="McDonald's"
               phno="+193423542345"
-              mapLocation={getLatLong("28.64121406271755, 77.21955482132051")}
+              mapLocation={getLatLong("22.4737047, 88.4152161")}
               address="H-5/6, Plaza Building, Connaught Place, New Delhi"
             />
           </div>
@@ -183,7 +198,7 @@ const Overview = () => {
         <MapView
           title="McDonald's"
           phno="+193423542345"
-          mapLocation={getLatLong("28.64121406271755, 77.21955482132051")}
+          mapLocation={getLatLong("22.4737047,88.4152161")}
           address="H-5/6, Plaza Building, Connaught Place, New Delhi"
         />
       </aside>
