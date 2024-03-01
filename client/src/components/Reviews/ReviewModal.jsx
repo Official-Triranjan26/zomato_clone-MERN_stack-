@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useParams } from "react-router-dom";
+import Rating from "react-rating-stars-component";
 
-const ReviewModal = ({ isOpen, setIsOpen, type, ...props }) => {
+const ReviewModal = ({ isOpen, setIsOpen, type }) => {
   const [reviewData, setReviewData] = useState({
     subject: "",
     reviewText: "",
@@ -10,6 +11,23 @@ const ReviewModal = ({ isOpen, setIsOpen, type, ...props }) => {
     isFoodReview: false,
     rating: 0,
   });
+
+  useEffect(() => {
+    if (type === "delivery")
+      setReviewData((prev) => ({
+        ...prev,
+        isFoodReview: true,
+        isRestaurantReview: false,
+      }));
+    else if (type === "dining")
+      setReviewData((prev) => ({
+        ...prev,
+        isRestaurantReview: true,
+        isFoodReview: false,
+      }));
+  }, [type]);
+
+  console.log(reviewData.isRestaurantReview, reviewData.isFoodReview);
 
   const { id } = useParams();
 
@@ -44,7 +62,16 @@ const ReviewModal = ({ isOpen, setIsOpen, type, ...props }) => {
     setIsOpen(false);
   };
 
-  const submit = () => {};
+  const submit = () => {
+    closeModal();
+    setReviewData({
+      subject: "",
+      reviewText: "",
+      isRestaurantReview: false,
+      isFoodReview: false,
+      rating: 0,
+    });
+  };
 
   return (
     <>
@@ -78,22 +105,73 @@ const ReviewModal = ({ isOpen, setIsOpen, type, ...props }) => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Payment successful
+                    Add Review
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Your payment has been successfully submitted. We’ve sent
-                      you an email with all of the details of your order.
-                    </p>
+
+                  <div className="mt-2 flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="review"
+                          id="dining"
+                          checked={reviewData.isRestaurantReview}
+                          onChange={toggleDining}
+                        />
+                        <label htmlFor="dining">Dining</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="review"
+                          id="delivery"
+                          checked={reviewData.isFoodReview}
+                          onChange={toggleDelivery}
+                        />
+                        <label htmlFor="delivery">Delivery</label>
+                      </div>
+                    </div>
+                    <Rating
+                      count={5}
+                      size={24}
+                      value={reviewData.rating}
+                      onChange={handleRating}
+                    />
+
+                    <form className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="subject">Subject</label>
+                        <input
+                          type="text"
+                          id="subject"
+                          placeholder="Add context..."
+                          value={reviewData.subject}
+                          onChange={handleChange}
+                          className="w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline focus:border-zomato-400"
+                        />
+                      </div>
+                      <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="reviewText">Comment</label>
+                        <textarea
+                          type="text"
+                          id="reviewText"
+                          rows={5}
+                          placeholder="Add review..."
+                          value={reviewData.reviewText}
+                          onChange={handleChange}
+                          className="w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline focus:border-zomato-400"
+                        />
+                      </div>
+                    </form>
                   </div>
 
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                      className="inline-flex justify-center rounded-md border border-transparent bg-zomato-400 px-4 py-2 text-sm font-medium text-white hover:bg-zomato-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-zomato-500 focus-visible:ring-offset-2"
+                      onClick={submit}
                     >
-                      Got it, thanks!
+                      Add
                     </button>
                   </div>
                 </Dialog.Panel>
