@@ -29,7 +29,7 @@ const AddReviewCard = () => {
             type={"radio"}
             name="review"
             id="dining"
-            onChange={(each) => getReviewType(each.target.name)}
+            onChange={(each) => getReviewType(each.target.id)}
           />
           <label htmlFor="dining">Dining</label>
         </div>
@@ -38,7 +38,7 @@ const AddReviewCard = () => {
             type={"radio"}
             name="review"
             id="delivery"
-            onChange={(each) => getReviewType(each.target.name)}
+            onChange={(each) => getReviewType(each.target.id)}
           />
           <label htmlFor="delivery">Delivery</label>
         </div>
